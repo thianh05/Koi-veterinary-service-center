@@ -1,5 +1,5 @@
 <div align="center">
-**PROJECT 06 : KOI VETERINARY SERVICE CENTRE**  
+ <h2><strong>PROJECT 06 : KOI VETERINARY SERVICE CENTRE</strong></h2>
  </div>  
 
   **MEMBERS**  
