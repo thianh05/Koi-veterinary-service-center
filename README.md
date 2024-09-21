@@ -1,5 +1,8 @@
 **PROJECT 06 : KOI VETERINARY SERVICE CENTRE**  
-**MEMBERS**  
+<div align="center">
+  **MEMBERS**
+</div>
+
 | No | ID           | Name                         |
 |----|--------------|------------------------------|
 | 01 | 058204001444 | Lê Phạm Đức Thịnh           |
