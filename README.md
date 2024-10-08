@@ -22,9 +22,8 @@ NGƯỜI THỰC HIỆN SQL:
 | 02 | 083205005206 | Lê Nguyễn Nhật Trường       |
 | 03 | 079205005433 | Dương Minh Mẫn               |
 ----------------------------------------------------
-**UPDATE:** 08/10/24 cập nhật SQL - 
+**UPDATE:** 08/10/24 update SQL (master)
 BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
-Dưới đây là bảng có thêm một cột trống:
 
 | No | ID           | Name                         |  CÔNG VIỆC      |
 |----|--------------|------------------------------|--------|
