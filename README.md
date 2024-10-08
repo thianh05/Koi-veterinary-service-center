@@ -21,6 +21,7 @@ NGƯỜI THỰC HIỆN SQL:
 | 01 | 079205048768 | Vũ Tài Đức                  |
 | 02 | 083205005206 | Lê Nguyễn Nhật Trường       |
 | 03 | 079205005433 | Dương Minh Mẫn               |
+**UPDATE:** 08/10/24 cập nhật SQL.
 
 
 
