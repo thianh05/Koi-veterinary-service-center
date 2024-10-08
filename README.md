@@ -14,5 +14,13 @@
 
 **UPDATE:** 03/10/24 - ASP installed & discussing (research about SQL, C#, and UI 4 the project) 
 <img width="1225" alt="screenshotdownloadasp" src="57aa67b548f9f1a7a8e8.jpg">
+**UPDATE:** 07/10/24 - Phân chia công việc SQL,frontend,backend - đang thực hiện SQL.
+NGƯỜI THỰC HIỆN SQL:
+| No | ID           | Name                         |
+|----|--------------|------------------------------|
+| 01 | 079205048768 | Vũ Tài Đức                  |
+| 02 | 083205005206 | Lê Nguyễn Nhật Trường       |
+| 03 | 079205005433 | Dương Minh Mẫn               |
+
 
 
