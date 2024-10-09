@@ -37,6 +37,9 @@ BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 | 04 | 079205048768 | Vũ Tài Đức                    |  SQL & backend       |
 | 05 | 083205005206 | Lê Nguyễn Nhật Trường         |  SQL & backend      |
 | 06 | 079205005433 | Dương Minh Mẫn                |   SQL & backend     |
+----------------------------------------------------------------------------------
+**UPDATE**: 09/10/24 Phác thảo giao diện mong muốn, tiến hành thực hiện frontend.
+
 
 
 
