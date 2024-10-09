@@ -27,7 +27,8 @@ NGƯỜI THỰC HIỆN SQL:
 | 03 | 079205005433 | Dương Minh Mẫn               |
 ----------------------------------------------------
 **UPDATE:** 08/10/24 update SQL (master)
-<img width="1225" alt="a9c85aacb9d7008959c6.jpg">
+
+<img width="1225" alt="a9c85aacb9d7008959c6.jpg">src="a9c85aacb9d7008959c6.jpg">
 BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 
 | No | ID           | Name                         |  CÔNG VIỆC      |
