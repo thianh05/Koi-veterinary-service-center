@@ -29,7 +29,7 @@ BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 |----|--------------|------------------------------|--------|
 | 01 | 058204001444 | Lê Phạm Đức Thịnh             |  frontend       |
 | 02 | 075205001763 | Nguyễn Tấn Tài                |  backend       |
-| 03 | 080305002637 | Nguyễn Thị Anh Thi (C)        |    frontend   |
+| 03 | 080305002637 | Nguyễn Thị Anh Thi (C)        |    frontend & report project  |
 | 04 | 079205048768 | Vũ Tài Đức                    |  SQL & backend       |
 | 05 | 083205005206 | Lê Nguyễn Nhật Trường         |  SQL & backend      |
 | 06 | 079205005433 | Dương Minh Mẫn                |   SQL & backend     |
