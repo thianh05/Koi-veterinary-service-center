@@ -27,6 +27,7 @@ NGƯỜI THỰC HIỆN SQL:
 | 03 | 079205005433 | Dương Minh Mẫn               |
 ----------------------------------------------------
 **UPDATE:** 08/10/24 update SQL (master)
+<img width="1225" alt="a9c85aacb9d7008959c6.jpg">
 BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 
 | No | ID           | Name                         |  CÔNG VIỆC      |
@@ -39,7 +40,10 @@ BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 | 06 | 079205005433 | Dương Minh Mẫn                |   SQL & backend     |
 ----------------------------------------------------------------------------------
 **UPDATE**: 09/10/24 Phác thảo giao diện mong muốn, tiến hành thực hiện frontend.
-
+<div align="center">
+ <h2><strong>HÌNH ẢNH PHÁC THẢO </strong></h2>
+ </div>
+<img width="1225" alt="	Ảnh chụp màn hình 2024-10-09 213658.png">
 
 
 
