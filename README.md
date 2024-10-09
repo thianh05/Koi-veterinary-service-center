@@ -27,6 +27,7 @@ NGƯỜI THỰC HIỆN SQL:
 | 03 | 079205005433 | Dương Minh Mẫn               |
 ----------------------------------------------------
 **UPDATE:** 08/10/24 cập nhật SQL (mục main -> master)
+<img width="1225" alt="C:\Users\HP\Downloads\SQL.jpg" src="SQL.jpg">
 BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 
 | No | ID           | Name                         |  CÔNG VIỆC      |
