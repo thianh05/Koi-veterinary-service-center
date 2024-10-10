@@ -39,8 +39,9 @@ BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 | 05 | 083205005206 | Lê Nguyễn Nhật Trường         |  SQL & backend      |
 | 06 | 079205005433 | Dương Minh Mẫn                |   SQL & backend     |
 ----------------------------------------------------------------------------------
-**UPDATE**: 09/10/24 - 10/10 Phác thảo giao diện mong muốn & tiến hành thực hiện frontend.
-<img width="1225" alt="Frontend update 10/10" src="Frontend 1010.png">
+**UPDATE**: 09/10/24 - 10/10 Phác thảo giao diện mong muốn & tiến hành thực hiện frontend :
+
+<img width="1120" alt="Frontend update 10/10" src="Frontend 1010.png">
 
 
 
