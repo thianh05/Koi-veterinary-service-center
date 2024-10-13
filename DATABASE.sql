@@ -8,7 +8,10 @@ CREATE TABLE TrungTam (
 );
 
 INSERT INTO TrungTam (TenTrungTam, DiaChi, Hotline, Mota)
-VALUES ('Trung Tâm Thú Y Cá Koi', '123 Đường Bạch Dằngd, Quận 1, TP. HCM', '091234567', 'Trung tâm Thú Y Cá Koi chuyên cung cấp các các dịch vụ khám bệnh, chữa bệnh cá koi chuyên nghiệp.');
+VALUES ('Trung Tâm Thú Y Cá Koi', 
+'123 Đường Bạch Đằng, Quận 1, TP. HCM', 
+'091234567', 
+'Trung tâm Thú Y Cá Koi chuyên cung cấp các các dịch vụ khám bệnh, chữa bệnh cá koi chuyên nghiệp.');
 
 CREATE TABLE DichVuThuY (
     MaDichVu INT PRIMARY KEY AUTO_INCREMENT,
@@ -27,10 +30,12 @@ VALUES
 ('Dịch vụ điều trị tại nhà', 'Dịch vụ điều trị tại nhà cho cá Koi.');
 
 CREATE TABLE BacSi (
-    TenBacSi VARCHAR(100),
+    TenBacSi VARCHAR(255),
     KinhNghiem int,
     Email VARCHAR(100)
 );
+ALTER TABLE BacSi 
+ADD COLUMN Availability ENUM('Rảnh', 'Bận') DEFAULT 'Rảnh';
 
 INSERT INTO BacSi (TenBacSi, KinhNghiem, Email)
 VALUES ('Đặng Thành Phát', 10, 'dangthanhphat@gmail.com'),
@@ -41,7 +46,7 @@ VALUES ('Đặng Thành Phát', 10, 'dangthanhphat@gmail.com'),
 	   ('Trần Quốc Dũng', 2, 'tranquocdung@gmail.com'),
 	   ('Nguyễn Thành Danh', 3, 'nguyenthanhdanh@gmail.com'),
        ('Nguyễn Hải Đăng',6,'dangnguyen@gmail.com'),
-       ('Trần Văn Duy',10,'tranvanduy8@gmail.com'),
+        ('Trần Văn Duy',10,'tranvanduy8@gmail.com'),
        ('Hoàng Nhật Minh',1,'hoanbgnhatminh1@gamil.com'),
        ('Lê Duy Khánh',12,'leduykhanh2@gmail.com'),
        ('Nguyễn Phú Quốc',9,'nguyenphuquoc7@gmail.com'),
@@ -53,6 +58,9 @@ VALUES ('Đặng Thành Phát', 10, 'dangthanhphat@gmail.com'),
        ('Lê Duy Minh',7,'leduyminh221@gmail.com'),
        ('Võ Quang Huy',9,'voquanghuy82@gmail.com'),
        ('Ngô Gia Lộc',1,'ngogialoc32@gmail.com');
+
+
+      
        
  CREATE TABLE KhachHang(
     TenKhachHang VARCHAR(255),
@@ -89,7 +97,6 @@ CREATE TABLE LichHen(
      TrangThai CHAR(50),
      HomeVisit BIT DEFAULT 0
 ); 
-
 INSERT INTO LichHen (TenKhachHang, TenBacSi, NgayHen, TrangThai, HomeVisit)
 VALUES ('Lê Văn Luyện', 'Đặng Thành Phát', '2024-07-10 09:54:34', 'In Progress', 1),
        ('Trần Văn Cam', 'Trần Thị Bình', '2024-07-04 12:39:22', 'In Progress', 0),
@@ -100,18 +107,22 @@ VALUES ('Lê Văn Luyện', 'Đặng Thành Phát', '2024-07-10 09:54:34', 'In P
        ('Nguyễn Gia Huy', 'Nguyễn Thành Danh', '2024-07-3 19:22:08','In Progress',0),
 	   ('Trần Thảo Nguyên', 'Nguyễn Hải Đăng', '2024-03-21 13:01:42','Completed',1),
        ('Đàm Vĩnh Hưng', 'Trần Văn Duy', '2024-08-10 09:00:00','Completed',1),
-       ('Hiếu Thứ Hai', 'Hoàng Nhật Minh', '2024-08-20 09:30:00','In Progress',0),
+       ('Hiếu Thứ Hai', 'Hoàng Nhật Minh', '2024-10-20 09:30:00','In Progress',0),
        ('Trần Lả Lướt', 'Lê Duy Khánh', '2024-10-20 12:30:00','In Progress' ,1),
        ('Trần Nhân Tông', 'Nguyễn Phú Quốc', '2024-10-11 08:00:00','Completed',1),
        ('Vũ Bảo Hà', 'Trần Đình Trọng', '2024-07-10 09:54:34', 'In Progress', 1),
-       ('Phạm Minh Tuấn', 'Nguyễn Ngọc Ngân', '2024-07-04 12:39:22', 'In Progress', 0),
+       ('Phạm Minh Tuấn', 'Nguyễn Ngọc Ngân', '2024-10-30 12:39:22', 'In Progress', 0),
        ('Lý Hoàng Nam', 'Nguyễn Minh Hà', '2024-06-04 11:22:53', 'Completed', 1),
        ('Nguyễn Thị Hoa', 'Lê Bảo Đại', '2024-06-10 11:22:53', 'Completed', 1),
-       ('Bùi Văn An', 'Huỳnh Minh Đạt', '2024-07-15 09:02:32', 'Pending', 0),
+       ('Bùi Văn An', 'Huỳnh Minh Đạt', '2024-10-20 09:02:32', 'Pending', 0),
        ('Phạm Thị Lan', 'Lê Duy Minh', '2024-04-20 16:15:28', 'Completed', 1),
        ('Hoàng Duy Khánh', 'Võ Quang Huy', '2024-07-03 19:22:08', 'In Progress', 0),
        ('Trần Văn Tài', 'Ngô Gia Lộc', '2024-03-21 13:01:42', 'Completed', 1);
        
+
+
+
+
 CREATE TABLE BangGia(
       TenDichVu VARCHAR(100),
       Gia DECIMAL(10, 2)
@@ -193,7 +204,7 @@ SELECT *
     AND NgayHen = @NgayHen;   
 select *
  from LichHen
-  where TrangThai='complete';
+  where TrangThai='completed';
 UPDATE LichHen
 SET TrangThai = 'In Progress' 
 WHERE TenKhachHang = @TenKhachHang AND TenBacSi = @TenBacSi AND NgayHen = @NgayHen;
@@ -225,10 +236,78 @@ FROM Bacsi;
 SELECT * 
 FROM DichVuThuY;
 
+SELECT * FROM BacSi
+ORDER BY RAND()
+LIMIT 1;
+UPDATE LichHen
+SET TrangThai = 'Completed'
+WHERE TenKhachHang = @TenKhachHang AND TenBacSi = @TenBacSi AND NgayHen = @NgayHen;
+INSERT INTO Feedback (TenKhachHang, Email, DanhGia, BinhLuan, NgayPhanHoi)
+VALUES (@TenKhachHang, 
+        @Email, 
+        @DanhGia, 
+        @BinhLuan, 
+        CURDATE());
+SELECT * FROM Feedback
+ORDER BY NgayPhanHoi DESC;
+
+SELECT 
+    TenDichVu,
+    Gia,
+    CASE 
+        WHEN TenDichVu LIKE '%tại nhà%' THEN Gia + 200000
+        ELSE Gia
+    END AS GiaCuoiCung
+FROM BangGia;
 
 
 
 
+SELECT Availability 
+FROM BacSi 
+WHERE TenBacSi = @TenBacSi;
 
+UPDATE BacSi
+SET Availability = 'Bận'
+WHERE TenBacSi = @TenBacSi;
 
+UPDATE BacSi
+SET Availability = 'Bận'
+WHERE TenBacSi IN (
+    SELECT DISTINCT TenBacSi 
+    FROM LichHen 
+    WHERE TrangThai IN ('Pending', 'In Progress')
+      AND NgayHen > NOW()
+);
 
+UPDATE BacSi
+SET Availability = 'Rảnh'
+WHERE TenBacSi NOT IN (
+    SELECT DISTINCT TenBacSi 
+    FROM LichHen 
+    WHERE TrangThai IN ('Pending', 'In Progress')
+      AND NgayHen > NOW()
+);
+
+INSERT INTO LichHen (TenKhachHang, TenBacSi, NgayHen, TrangThai, HomeVisit)
+SELECT @TenKhachHang, @TenBacSi, @NgayHen, 'Pending', @HomeVisit
+WHERE (SELECT Availability FROM BacSi WHERE TenBacSi = @TenBacSi) = 'Rảnh';
+
+UPDATE BacSi
+SET Availability = 'Rảnh'
+WHERE TenBacSi = @TenBacSi
+  AND NOT EXISTS (
+    SELECT 1 FROM LichHen 
+    WHERE TenBacSi = @TenBacSi 
+      AND TrangThai IN ('Pending', 'In Progress')
+      AND NgayHen > NOW()
+  );
+  SELECT TenBacSi, KinhNghiem, Email, Availability
+FROM BacSi
+WHERE Availability = 'Rảnh'
+
+UNION
+
+SELECT TenBacSi, KinhNghiem, Email, Availability
+FROM BacSi
+WHERE Availability = 'Bận';
