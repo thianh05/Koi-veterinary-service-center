@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuẩn Đoán Bệnh Cho Cá Koi</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/themify-icons/themify-icons.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .header-container img {
+                width: 120px;
+            }
+
+            .header-container h1 {
+                font-size: 26px;
+                text-align: center;
+            }
+
+        #headerGri {
+            background-color: #347ca9;
+            padding: 10px 0;
+        }
+
+        #navGri {
+            list-style-type: none;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+        }
+
+            #navGri li {
+                display: inline;
+                margin-left: 20px;
+            }
+
+                #navGri li a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 18px;
+                }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+            .form-container div {
+                width: 45%;
+            }
+
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: #347ca9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+            .submit-btn i {
+                font-size: 20px;
+                margin-left: 5px;
+            }
+
+            .submit-btn:hover {
+                background-color: #295b7d;
+            }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div id="headerGri">
+        <ul id="navGri">
+            <li><a href="#">Tìm bác sĩ</a></li>
+            <li><a href="#">Chăm sóc khách hàng</a></li>
+        </ul>
+    </div>
+
+    <div class="header-container">
+        <div>
+            <img src="assets/css/img.css/KoiKoilogo.png" alt="Koi Koi Logo">
+        </div>
+        <h1>CHUẨN ĐOÁN BỆNH CHO CÁ KOI</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div>
+                <h2>Thông tin khách hàng</h2>
+                <label for="name">Họ và Tên :</label>
+                <input type="text" id="name" name="name" placeholder="Nhập họ và tên...">
+
+                <label for="phone">Số điện thoại :</label>
+                <input type="text" id="phone" name="phone" placeholder="Nhập số điện thoại...">
+            </div>
+
+            <div>
+                <h2>Mô tả tình trạng cá</h2>
+                <label for="fish-type">Loại cá :</label>
+                <input type="text" id="fish-type" name="fish-type" placeholder="Nhập loại cá...">
+
+                <label for="fish-status">Mô tả tình trạng cá đang gặp :</label>
+                <textarea id="fish-status" name="fish-status" rows="6" placeholder="Mô tả tình trạng cá..."></textarea>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button type="submit" class="submit-btn">
+                Gửi thông tin cho bác sĩ <i class="ti-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Koi Koi. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 400px;
+}
+
+#title1 h1 {
+    margin-right: 90px;
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#title1 h2 {
+    font-size: 20px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+}
+
+.login-box {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.login-box input {
+    display: block;
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 20px;
+    background-color: #fff; 
+    border: 2px solid #000; 
+}
+
+.contact-info {
+    position: absolute; 
+    bottom: 5%;
+    right: 0;
+    left: 0;
+    color: #000;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.login-signin {
+    display: flex;     
+    justify-content: center; 
+    padding: 0 20px;
+}
+
+.login-signin button {
+    padding: 15px 30px;     
+    font-size: 18px;        
+    border-radius: 20px;    
+    background: linear-gradient(180deg, #008ca8, #0068ab);
+    color: #fff;           
+    border: none;           
+    cursor: pointer;        
+    width: 100%;   
+}
+
+.login-signin button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-signin button:hover {
+    color: #0068ab;
+    background: #ccc;
+    transform: translateY(1px);
+}
+
+.register {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none; 
+    align-items: center;
+    justify-content: center;
+}
+.register-box{
+    border: 2px solid #000; 
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+}
+#registerform:target {
+    display: flex; 
+}
+
+.input-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-button {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.close {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+}
