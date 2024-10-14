@@ -235,6 +235,12 @@ SELECT *
 FROM Bacsi;
 SELECT * 
 FROM DichVuThuY;
+SELECT * 
+FROM thuoc;
+SELECT * 
+FROM thanhtuu;
+SELECT * 
+FROM doitac;
 
 SELECT * FROM BacSi
 ORDER BY RAND()
@@ -311,3 +317,82 @@ UNION
 SELECT TenBacSi, KinhNghiem, Email, Availability
 FROM BacSi
 WHERE Availability = 'Bận';
+
+CREATE TABLE Thuoc (
+    MaThuoc INT PRIMARY KEY AUTO_INCREMENT,
+    TenThuoc VARCHAR(255),
+    CongDung TEXT,
+    LieuLuong VARCHAR(100),
+    GhiChu TEXT,
+    Gia DECIMAL(10, 2) 
+);
+
+INSERT INTO Thuoc (TenThuoc, CongDung, LieuLuong, GhiChu, Gia)
+VALUES 
+-- Các loại thuốc kháng sinh
+('Oxytetracycline', 'Kháng sinh điều trị các bệnh do vi khuẩn', '1g/100 lít nước trong 7 ngày', 'Không sử dụng quá liều để tránh tình trạng kháng thuốc.', 100.00),
+('Amoxicillin', 'Điều trị nhiễm khuẩn nội và ngoại', '500mg/100 lít nước trong 7 ngày', 'Thường sử dụng trong trường hợp nhiễm trùng da và vây cá.', 150.00),
+('Erythromycin', 'Kháng sinh chống nhiễm trùng do vi khuẩn gram dương', '250mg/100 lít nước trong 7 ngày', 'Thích hợp cho các bệnh do nhiễm khuẩn mủ và loét.', 200.00),
+('Doxycycline', 'Điều trị nhiễm trùng và viêm nhiễm', '10mg/100 lít nước trong 7 ngày', 'Dùng trong nước có độ kiềm thấp để tránh tác dụng phụ.', 120.00),
+('Ciprofloxacin', 'Kháng khuẩn mạnh, chống lại nhiều loại vi khuẩn gram âm', '200mg/100 lít nước trong 5 ngày', 'Cẩn thận với sự phát triển của các loại vi khuẩn kháng thuốc.', 180.00),
+
+-- Thuốc trị ký sinh trùng
+('Praziquantel', 'Điều trị giun sán và ký sinh trùng trong nội tạng', '2mg/lít nước trong 1 ngày', 'Thích hợp dùng trong điều kiện nước mặn hoặc nước ngọt.', 250.00),
+('Levamisole', 'Điều trị giun và ký sinh trùng trong ruột', '5mg/lít nước trong 24 giờ', 'Có thể lặp lại sau 7 ngày để chắc chắn loại bỏ hết ký sinh trùng.', 220.00),
+('Metronidazole', 'Điều trị bệnh do ký sinh trùng và nhiễm khuẩn nội', '250mg/100 lít nước trong 5 ngày', 'Sử dụng với nước ấm, tránh nhiệt độ quá lạnh.', 130.00),
+('Formalin', 'Điều trị bệnh do ký sinh trùng và nấm ngoài da', '0.25ml/10 lít nước trong 1 ngày', 'Có thể gây độc nếu dùng ở nồng độ cao, sử dụng cẩn thận.', 90.00),
+
+-- Thuốc trị nấm và khử trùng
+('Malachite Green', 'Chữa bệnh nấm và ký sinh trùng trên da cá', '0.1g/100 lít nước trong 5 ngày', 'Không dùng quá liều, độc hại cho cá nếu sử dụng quá mức.', 110.00),
+('Methylene Blue', 'Chữa bệnh nấm, ký sinh trùng và sát khuẩn', '0.5g/100 lít nước trong 7 ngày', 'Giúp khử trùng nước và tăng cường sức đề kháng của cá.', 140.00),
+('Potassium Permanganate', 'Sát khuẩn và trị nấm ngoài da', '1g/1000 lít nước trong 30 phút', 'Không dùng quá liều để tránh gây cháy da cá.', 80.00),
+
+-- Thuốc bổ trợ và tăng cường miễn dịch
+('Vitamin C', 'Tăng cường miễn dịch và hỗ trợ hồi phục sau khi điều trị bệnh', '100mg/kg thức ăn trong 10 ngày', 'Giúp cá phục hồi sức khỏe và ngăn ngừa các bệnh truyền nhiễm.', 60.00),
+('Beta-glucan', 'Tăng cường sức đề kháng tự nhiên cho cá', '1g/kg thức ăn trong 14 ngày', 'Thường kết hợp với thuốc khác để tăng cường hiệu quả điều trị.', 70.00),
+('Aloe Vera Extract', 'Giúp cá nhanh lành vết thương và phục hồi da', '5ml/10 lít nước', 'Có thể sử dụng thường xuyên để bảo vệ cá khỏi nhiễm trùng.', 50.00),
+
+-- Thuốc khác
+('Salt', 'Điều trị ký sinh trùng ngoài da và giảm căng thẳng cho cá', '5g/lít nước', 'Giúp cải thiện hệ hô hấp của cá và tăng cường sức đề kháng.', 20.00),
+('Chloramine-T', 'Sát khuẩn và khử trùng nước hồ nuôi', '10g/1000 lít nước', 'Sử dụng khi nước hồ bị ô nhiễm, tránh lạm dụng.', 30.00),
+('Copper Sulfate', 'Trị nấm và ký sinh trùng ngoài da', '0.1g/100 lít nước trong 3 ngày', 'Cẩn thận khi sử dụng, đặc biệt trong nước mềm hoặc có độ pH thấp.', 40.00);
+
+CREATE TABLE DoiTac (
+    MaDoiTac INT PRIMARY KEY AUTO_INCREMENT,      
+    TenDoiTac VARCHAR(100) NOT NULL,              
+    LoaiHinhHopTac VARCHAR(50),                   
+    DiaChi VARCHAR(255),                       
+    SoDienThoai VARCHAR(15),                    
+    Email VARCHAR(100),                          
+    Website VARCHAR(100),                        
+    GhiChu TEXT                                 
+);
+
+INSERT INTO DoiTac (TenDoiTac, LoaiHinhHopTac, DiaChi, SoDienThoai, Email, Website, GhiChu)
+VALUES 
+('Công Ty TNHH Dược Phẩm ABC', 'Cung cấp thuốc', '123 Đường ABC, Quận 1, TP.HCM', '02812345678', 'contact@abcpharma.com', 'www.abcpharma.com', 'Chuyên cung cấp thuốc và dược phẩm dành cho thú y'),
+('Công Ty TNHH Thủy Sản Vina', 'Cung cấp thức ăn cá', '456 Đường XYZ, Quận 2, TP.HCM', '02898765432', 'sales@vinasan.com', 'www.vinasan.com', 'Đối tác cung cấp thức ăn cho cá Koi'),
+('Công Ty Cổ Phần Kỹ Thuật An Phú', 'Hỗ trợ kỹ thuật', '789 Đường DEF, Quận 7, TP.HCM', '02811223344', 'support@anphutech.com', 'www.anphutech.com', 'Chuyên hỗ trợ kỹ thuật, chăm sóc hồ cá Koi'),
+('Công Ty TNHH Xây Dựng Nam Long', 'Thiết kế hồ cá', '100 Đường GHI, Quận Bình Thạnh, TP.HCM', '02855667788', 'info@namlong.com', 'www.namlong.com', 'Thiết kế và thi công hồ cá Koi');
+
+CREATE TABLE ThanhTuu (
+    MaThanhTuu INT PRIMARY KEY AUTO_INCREMENT,
+    TenThanhTuu VARCHAR(255) NOT NULL,
+    MoTa TEXT,
+    NgayDatDuoc DATE,
+    GhiChu TEXT
+);
+
+INSERT INTO ThanhTuu (TenThanhTuu, MoTa, NgayDatDuoc, GhiChu)
+VALUES
+('Giải thưởng Trung tâm cá Koi xuất sắc 2023', 'Được vinh danh là trung tâm xuất sắc trong việc chăm sóc và nuôi dưỡng cá Koi năm 2023', '2023-05-10', 'Giải thưởng do Hiệp hội Thủy sản trao tặng'),
+('Đạt chuẩn quốc tế về chăm sóc cá Koi', 'Trung tâm đã đạt chứng nhận quốc tế về quy trình chăm sóc cá Koi', '2022-08-15', 'Được cấp bởi tổ chức quốc tế'),
+('Phát triển hệ thống hồ Koi hiện đại', 'Trung tâm đã phát triển và xây dựng thành công hệ thống hồ Koi hiện đại, đạt tiêu chuẩn kỹ thuật cao', '2021-10-01', 'Dự án kéo dài trong 6 tháng'),
+('Tăng trưởng đối tác lên 50%', 'Trong năm 2023, số lượng đối tác của trung tâm đã tăng trưởng 50% so với năm trước', '2023-12-20', 'Kết quả hợp tác quốc tế'),
+('Kỷ lục hồ Koi lớn nhất Việt Nam', 'Trung tâm xây dựng hồ Koi lớn nhất Việt Nam với diện tích 500m2', '2024-01-30', 'Hồ đạt kỷ lục quốc gia'),
+('Chứng nhận đạt tiêu chuẩn môi trường xanh', 'Trung tâm đã được cấp chứng nhận về môi trường xanh, bảo vệ động vật và thực vật', '2024-04-05', 'Chứng nhận từ tổ chức bảo vệ môi trường quốc tế'),
+('Thành viên chính thức của Hiệp hội Thủy sản toàn cầu', 'Trung tâm trở thành thành viên chính thức của hiệp hội quốc tế, tạo cơ hội hợp tác rộng rãi', '2023-11-15', 'Một bước tiến lớn trong quan hệ quốc tế'),
+('Chương trình nghiên cứu khoa học về cá Koi', 'Trung tâm đã hoàn thành nghiên cứu kéo dài 2 năm về đặc điểm sinh học của cá Koi', '2023-09-30', 'Nghiên cứu được công bố trên tạp chí khoa học quốc tế'),
+('Tổ chức hội thảo quốc tế về chăm sóc cá Koi', 'Trung tâm đã tổ chức thành công hội thảo quốc tế, thu hút nhiều chuyên gia trong ngành', '2024-06-10', 'Một sự kiện quan trọng cho ngành thủy sản'),
+('Giải thưởng đổi mới công nghệ trong nuôi trồng thủy sản', 'Được vinh danh nhờ áp dụng công nghệ mới trong việc nuôi trồng cá Koi', '2024-07-20', 'Giải thưởng từ tổ chức công nghệ quốc tế');
+
