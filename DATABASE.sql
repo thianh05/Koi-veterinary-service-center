@@ -396,3 +396,74 @@ VALUES
 ('Tổ chức hội thảo quốc tế về chăm sóc cá Koi', 'Trung tâm đã tổ chức thành công hội thảo quốc tế, thu hút nhiều chuyên gia trong ngành', '2024-06-10', 'Một sự kiện quan trọng cho ngành thủy sản'),
 ('Giải thưởng đổi mới công nghệ trong nuôi trồng thủy sản', 'Được vinh danh nhờ áp dụng công nghệ mới trong việc nuôi trồng cá Koi', '2024-07-20', 'Giải thưởng từ tổ chức công nghệ quốc tế');
 
+CREATE TABLE ChuanDoanBenhCaKoi (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    TenKhachHang VARCHAR(100),
+    SoDienThoai VARCHAR(15),
+    Email VARCHAR(100),
+    NgayThang VARCHAR(10),
+    ChuanDoan VARCHAR(100),
+    DauHieu TEXT,
+    HinhThucDieuTri TEXT,
+    TenLoaiCaKoi VARCHAR(100)
+);
+
+INSERT INTO ChuanDoanBenhCaKoi (TenKhachHang, SoDienThoai, Email, NgayThang, ChuanDoan, DauHieu, HinhThucDieuTri, TenLoaiCaKoi) 
+VALUES
+		('Lê Văn Luyện', '0123456789', 'levanluyen6@gmail.com', '2024-10-16', 'Nấm trắng', 'Cá có dấu hiệu nấm trắng trên cơ thể.', 'Sử dụng thuốc trị nấm.', 'Koi Kohaku'),
+		('Trần Văn Cam', '0987654321', 'tranvancam22@gmail.com', '2024-10-16', 'Bệnh thối vây', 'Vây cá bị thối và có mùi hôi.', 'Thay nước, dùng thuốc kháng sinh.', 'Koi Taisho Sanke'),
+		('Trần Thị Thúy', '0778542321', 'tranthuy1@gmail.com', '2024-10-16', 'Ký sinh trùng', 'Cá bị ngứa và nổi gạch.', 'Dùng thuốc trị ký sinh trùng.', 'Koi Showa Sanke'),
+		('Nguyễn Lê Đào', '0977233321', 'daole666@gmail.com', '2024-10-16', 'Bệnh viêm ruột', 'Cá ăn ít và có dấu hiệu tiêu chảy.', 'Dùng thuốc tiêu hóa.', 'Koi Yamabuki'),
+		('Vũ Cát Lượng', '0988433621', 'luongvu255@gmail.com', '2024-10-16', 'Bệnh đốm trắng', 'Có các đốm trắng trên cơ thể cá.', 'Sử dụng thuốc trị đốm trắng.', 'Koi Asagi'),
+		('Nguyễn Gia Huy', '0996334321', 'huynguyen771@gmail.com', '2024-10-16', 'Nấm mang', 'Mang cá có dấu hiệu nấm.', 'Sử dụng thuốc kháng nấm.', 'Koi Shiro Utsuri'),
+		('Trần Quốc Sơn', '0135798642', 'tranquocsoncute@gmail.com', '2024-10-16', 'Bệnh lở loét', 'Cá có vết lở loét trên cơ thể.', 'Dùng thuốc sát trùng.', 'Koi Bekko'),
+		('Trần Thảo Nguyên', '0185198242', 'nguyentran00@gmail.com', '2024-10-16', 'Bệnh xuất huyết', 'Cá có dấu hiệu xuất huyết.', 'Sử dụng thuốc cầm máu.', 'Koi Gin Rin'),
+		('Đàm Vĩnh Hưng', '0881928379', 'damvinhhung00@gmail.com', '2024-10-16', 'Bệnh viêm da', 'Da cá bị viêm và có màu đỏ.', 'Dùng thuốc chống viêm.', 'Koi Kin Ki Utsuri'),
+		('Hiếu Thứ Hai', '0173829471', 'hieuthuhai12@gmail.com', '2024-10-16', 'Bệnh chướng bụng', 'Cá có bụng phình to.', 'Thay nước, dùng thuốc tiêu hóa.', 'Koi Utsurimono'),
+		('Trần Lả Lướt', '0773624152', 'tranlaluot29@gmail.com', '2024-10-16', 'Bệnh bạch tạng', 'Cá có dấu hiệu bạch tạng.', 'Cung cấp chế độ dinh dưỡng hợp lý.', 'Koi Chagoi'),
+		('Trần Nhân Tông', '0283782919', 'trannhantong100@gmail.com', '2024-10-16', 'Bệnh tiêu chảy', 'Cá có dấu hiệu tiêu chảy, đi ngoài phân trắng.', 'Thay nước, dùng thuốc tiêu hóa.', 'Koi Matsuba'),
+		('Vũ Bảo Hà', '0833728379', 'vubaoha02@gmail.com', '2024-10-16', 'Bệnh trượt vây', 'Vây cá bị trượt, không thẳng.', 'Dùng thuốc tăng cường sức đề kháng.', 'Koi Tancho'),
+		('Phạm Minh Tuấn', '0983321675', 'phamtuan123@gmail.com', '2024-10-16', 'Bệnh mốc', 'Cá có dấu hiệu mốc trắng trên cơ thể.', 'Dùng thuốc trị mốc.', 'Koi Goshiki'),
+		('Lý Hoàng Nam', '0935278621', 'hoangnamly@gmail.com', '2024-10-16', 'Bệnh xoắn thân', 'Cá có hình dáng xoắn lại.', 'Dùng thuốc kháng sinh.', 'Koi Hi Utsuri'),
+		('Nguyễn Thị Hoa', '0825462931', 'nguyenthihoa90@gmail.com', '2024-10-16', 'Bệnh ngạt nước', 'Cá bơi yếu, có dấu hiệu ngạt nước.', 'Thay nước sạch và tăng oxi.', 'Koi Kohaku'),
+		('Bùi Văn An', '0998294372', 'anbuivan123@gmail.com', '2024-10-16', 'Bệnh nhuyễn thể', 'Cá có dấu hiệu mềm và nhũn.', 'Dùng thuốc tăng cường sức đề kháng.', 'Koi Shiro Utsuri'),
+		('Phạm Thị Lan', '0973258719', 'lanphamthi1995@gmail.com', '2024-10-16', 'Bệnh sán', 'Cá có dấu hiệu ngứa do sán.', 'Dùng thuốc trị sán.', 'Koi Taisho Sanke'),
+		('Hoàng Duy Khánh', '0851928472', 'khanhduyhoang@gmail.com', '2024-10-16', 'Bệnh thối mang', 'Mang cá bị thối.', 'Dùng thuốc trị thối mang.', 'Koi Showa Sanke'),
+		('Trần Văn Tài', '0928275632', 'tranvan123tai@gmail.com', '2024-10-16', 'Bệnh nhiễm khuẩn', 'Cá có dấu hiệu nhiễm khuẩn.', 'Dùng thuốc kháng khuẩn.', 'Koi Gin Rin');
+
+
+CREATE TABLE ChuanDoanTinhTrangNuoc (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    TenKhachHang VARCHAR(100),
+    SoDienThoai VARCHAR(15),
+    Email VARCHAR(100),
+    NgayThang DATE,
+    PH DECIMAL(3, 1),
+    DoCuongNuoc DECIMAL(5, 2),
+    NhietDo DECIMAL(4, 1),
+    TinhTrang TEXT
+);
+
+INSERT INTO ChuanDoanTinhTrangNuoc (TenKhachHang, SoDienThoai, Email, NgayThang, PH, DoCuongNuoc, NhietDo, TinhTrang) 
+VALUES
+	('Lê Văn Luyện', '0123456789', 'levanluyen6@gmail.com', '2024-10-16', 7.5, 6.0, 25.0, 'Nước đạt yêu cầu, cá khỏe mạnh.'),
+	('Trần Văn Cam', '0987654321', 'tranvancam22@gmail.com', '2024-10-16', 8.0, 7.5, 27.0, 'Nước hơi kiềm, cần kiểm soát pH.'),
+	('Trần Thị Thúy', '0778542321', 'tranthuy1@gmail.com', '2024-10-16', 6.8, 5.0, 24.0, 'Nước axit, cần điều chỉnh pH.'),
+	('Nguyễn Lê Đào', '0977233321', 'daole666@gmail.com', '2024-10-16', 7.2, 6.5, 26.0, 'Nước ổn định, cá khỏe mạnh.'),
+	('Vũ Cát Lượng', '0988433621', 'luongvu255@gmail.com', '2024-10-16', 8.2, 7.0, 28.0, 'Nước kiềm cao, cần điều chỉnh.'),
+	('Nguyễn Gia Huy', '0996334321', 'huynguyen771@gmail.com', '2024-10-16', 7.0, 5.5, 25.5, 'Nước đạt yêu cầu, cá bình thường.'),
+	('Trần Quốc Sơn', '0135798642', 'tranquocsoncute@gmail.com', '2024-10-16', 7.8, 6.2, 27.5, 'Nước ổn định, cá khỏe mạnh.'),
+	('Trần Thảo Nguyên', '0185198242', 'nguyentran00@gmail.com', '2024-10-16', 7.4, 5.8, 26.5, 'Nước đạt yêu cầu, không có vấn đề.'),
+	('Đàm Vĩnh Hưng', '0881928379', 'damvinhhung00@gmail.com', '2024-10-16', 7.6, 6.3, 27.0, 'Nước bình thường, cá khỏe mạnh.'),
+	('Hiếu Thứ Hai', '0173829471', 'hieuthuhai12@gmail.com', '2024-10-16', 8.1, 7.2, 28.5, 'Nước kiềm nhẹ, theo dõi thường xuyên.'),
+	('Trần Lả Lướt', '0773624152', 'tranlaluot29@gmail.com', '2024-10-16', 7.3, 6.0, 24.5, 'Nước ổn định, cá bình thường.'),
+	('Trần Nhân Tông', '0283782919', 'trannhantong100@gmail.com', '2024-10-16', 6.9, 5.2, 25.0, 'Nước hơi axit, cần điều chỉnh.'),
+	('Vũ Bảo Hà', '0833728379', 'vubaoha02@gmail.com', '2024-10-16', 7.5, 6.7, 27.0, 'Nước đạt yêu cầu, cá khỏe mạnh.'),
+	('Phạm Minh Tuấn', '0983321675', 'phamtuan123@gmail.com', '2024-10-16', 7.1, 5.9, 26.0, 'Nước ổn định, cá bình thường.'),
+	('Lý Hoàng Nam', '0935278621', 'hoangnamly@gmail.com', '2024-10-16', 8.3, 7.0, 28.0, 'Nước kiềm cao, cần theo dõi.'),
+	('Nguyễn Thị Hoa', '0825462931', 'nguyenthihoa90@gmail.com', '2024-10-16', 7.4, 6.4, 27.5, 'Nước đạt yêu cầu, cá khỏe mạnh.'),
+	('Bùi Văn An', '0998294372', 'anbuivan123@gmail.com', '2024-10-16', 7.2, 5.7, 25.5, 'Nước ổn định, không có vấn đề.'),
+	('Phạm Thị Lan', '0973258719', 'lanphamthi1995@gmail.com', '2024-10-16', 7.7, 6.1, 26.5, 'Nước bình thường, cá khỏe mạnh.'),
+	('Hoàng Duy Khánh', '0851928472', 'khanhduyhoang@gmail.com', '2024-10-16', 8.0, 7.3, 28.5, 'Nước kiềm nhẹ, cần theo dõi thường xuyên.'),
+	('Trần Văn Tài', '0928275632', 'tranvan123tai@gmail.com', '2024-10-16', 7.3, 6.5, 27.0, 'Nước đạt yêu cầu, cá khỏe mạnh.');
+
