@@ -42,9 +42,11 @@ BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 **UPDATE**: 09/10/24 - 10/10 Phác thảo giao diện mong muốn & tiến hành thực hiện frontend :
 
 <img width="1120" alt="Frontend update 10/10" src="Frontend 1010.png">
--------
+
 **UPDATE:** 10/10 11/10 12/10 push html và css lên git, tiếp tục code frontend, update push SQL.
 **UPDATE :** 13 14 15 16 /10 code frontend fix bug , tìm hiểu về html css
+NHỮNG PHẦN CÒN LẠI UPDATE KĨ TRONG DRIVE VUI LÒNG CHECK 
+
 
 
 
