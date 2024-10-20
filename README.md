@@ -45,7 +45,7 @@ BẢNG CÔNG VIỆC CỦA CÁC THÀNH VIÊN:
 
 **UPDATE:** 10/10 11/10 12/10 push html và css lên git, tiếp tục code frontend, update push SQL.
 **UPDATE :** 13 14 15 16 /10 code frontend fix bug , tìm hiểu về html css
-NHỮNG PHẦN CÒN LẠI UPDATE KĨ TRONG DRIVE VUI LÒNG CHECK 
+**UPDATE:** 18/10 dev - Frontend : Tư vấn dinh dưỡng và chế độ ăn cho cá (chuyên khoa),push git và tìm thêm ý tưởng cho giao diện, tìm hiểu về use case
 
 
 
