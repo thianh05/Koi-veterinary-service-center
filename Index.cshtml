@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký khám</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Đăng ký khám</h1>
+        <form action="#" method="POST" class="form-register">
+            <div class="form-group">
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Ngày khám:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Dịch vụ:</label>
+                <select id="service" name="service" required>
+                    <option value="">Chọn dịch vụ</option>
+                    <option value="kham-suc-khoe">Khám sức khỏe định kì cho cá Koi</option>
+                    <option value="chuan-doan-benh">Chuẩn đoán bệnh cho cá Koi</option>
+                    <option value="dieu-tri-benh">Điều trị bệnh cho cá Koi</option>
+                    <option value="tu-van-dinh-duong">Tư vấn dinh dưỡng cho cá Koi</option>
+                    <option value="ho-va-nuoc">Tư vấn về hồ nuôi, chất lượng nước, cải tạo và bảo trì hồ</option>
+                    <option value="ke-don-thuoc">Kê đơn thuốc cho cá Koi</option>
+                    <option value="dieu-tri-tai-nha">Điều trị tại nhà cho cá Koi</option>
+                </select>
+            </div>
+
+
+            <button type="submit" class="btn-submit">Đăng ký</button>
+        </form>
+    </div>
+</body>
+</html>
