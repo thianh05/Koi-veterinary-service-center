@@ -1,0 +1,123 @@
+﻿@using System.Globalization
+@using WebKoi6.DAL.Models;
+@model List<Banggia>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int dvId = (int)ViewBag.Search;
+    var lstDichvu = (List<Dichvuthuy>)ViewBag.DichVu;
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">Danh sách bảng giá dịch vụ</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Danh sách bảng giá dịch vụ</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Danh sách bảng giá dịch vụ</h4>
+                <div class="flex-shrink-0">
+                    <button type="button" id="btnCreate" onclick="window.location.href='/Admin/Banggia/AddOrEdit'" class="btn btn-warning btn-sm"><i class="bx bx-plus"></i> Thêm</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="/Admin/Banggia">
+                    <div class="live-preview pb-3">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Dịch vụ</label>
+                                <select class="form-control" id="sltSearch" name="dvid">
+                                    <option value="0">-Tất cả dịch vụ-</option>
+                                    @if(lstDichvu != null && lstDichvu.Count > 0)
+                                    {
+                                        foreach(var item in lstDichvu)
+                                        {
+                                            if (dvId == item.MaDichVu)
+                                            {
+                                                <option value="@item.MaDichVu" selected>@item.TenDichVu </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.MaDichVu">@item.TenDichVu</option>
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-md-1">
+                                <button type="submit" class="btn btn-primary" style="margin-top:28px;" id="btnSeach"><i class="bx bx-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <table class="table table-centered align-middle">
+                    <thead>
+                        <tr>
+                            <th>Tên dịch vụ</th>
+                            <th>Giá tiền</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.TenDichVu</td>
+                                    <td>@item.Gia.ToString("C", CultureInfo.GetCultureInfo("vi-VN"))</td>
+                                    <td>
+                                        <a class="btn btn-info btn-sm me-2" href="/Admin/Banggia/AddOrEdit?id=@item.Id">Sửa</a>
+                                        <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa bảng giá này?')" href="/Admin/Banggia/Delete?id=@item.Id">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="scroll-horizontal_paginate">
+                            <ul class="pagination">
+                                @if (ViewBag.CurrentPage > 1)
+                                {
+                                    var pageCurrent = ViewBag.CurrentPage - 1;
+                                    <li class="paginate_button page-item previous disabled" id="scroll-horizontal_previous">
+                                        <a href="/Admin/Bacsi/Index?dvid=@dvId&page=@pageCurrent" aria-controls="scroll-horizontal" data-dt-idx="@pageCurrent" tabindex="0" class="page-link">Previous</a>
+                                    </li>
+                                }
+                                @for (var i = 1; i <= ViewBag.TotalPages; i++)
+                                {
+                                    <li class="paginate_button page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                        <a href="/Admin/Bacsi/Index?dvid=@dvId&page=@i" aria-controls="scroll-horizontal" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                                    </li>
+                                }
+
+                                @if (ViewBag.CurrentPage < ViewBag.TotalPages)
+                                {
+                                    var pageNext = ViewBag.CurrentPage + 1;
+                                    <li class="paginate_button page-item next" id="scroll-horizontal_next">
+                                        <a href="/Admin/Bacsi/Index?dvid=@dvId&page=@pageNext" aria-controls="scroll-horizontal" data-dt-idx="@pageNext" tabindex="@pageNext" class="page-link">Next</a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
