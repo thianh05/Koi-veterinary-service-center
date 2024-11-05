@@ -1,1 +1,1 @@
-UPDATE SQL Minh Mẫn, Tài Đức, Nhật Trường
+final SQL Minh Mẫn, Tài Đức, Nhật Trường
