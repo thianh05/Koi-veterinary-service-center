@@ -1,8 +1,8 @@
 <div align="center">
  <h2><strong>KOI VETERINARY SERVICE CENTRE</strong></h2>
  </div>  
-
-Nhóm I - Project 06
+ 
+**GROUP I - PROJECT 06**
 | No | ID           | Name                         |
 |----|--------------|------------------------------|
 | 01 | 058204001444 | Lê Phạm Đức Thịnh           |
@@ -18,7 +18,6 @@ Nhóm I - Project 06
 <div align="center">
  <h2><strong>TÀI NGUYÊN SỬ DỤNG CHO DỰ ÁN</strong></h2>
  </div>  
-----------------------------------------------------------------------------------------------------
 **Database**
 Database : MySQL (version 8.0)
 **Ngôn ngữ lập trình**
