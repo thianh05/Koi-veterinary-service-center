@@ -1,0 +1,26 @@
+﻿@using WebKoi6.DAL.Models
+@model Tintuc
+@{
+    ViewData["Title"] = "Tin tức";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if(Model != null)
+{
+    <!-- NEWS DETAIL -->
+    <section id="news-detail" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <!-- NEWS THUMB -->
+                    <div class="news-detail-thumb">
+                        @Html.Raw(Model.NoiDung)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <p>Không có thông tin, tin tức</p>
+}

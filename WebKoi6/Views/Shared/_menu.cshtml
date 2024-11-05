@@ -1,0 +1,45 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor _httpContextAccessor;
+@{
+    var controller = _httpContextAccessor.HttpContext.Request.RouteValues["Controller"].ToString().ToLower();
+}
+<section class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+
+            <!-- lOGO TEXT HERE -->
+            <a href="/" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+        </div>
+        @if (controller.Equals("tintuc"))
+        {
+            <!-- MENU LINKS -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Home/Index#top" class="smoothScroll">Trang chủ</a></li>
+                    <li><a href="/Home/Index#about" class="smoothScroll">Trung tâm</a></li>
+                    <li><a href="/Home/Index#team" class="smoothScroll">Bác sĩ</a></li>
+                    <li><a href="/Home/Index#news" class="smoothScroll">Tin tức</a></li>
+                    <li class="appointment-btn"><a href="/Home/Index#appointment">Đặt lịch</a></li>
+                </ul>
+            </div>
+        }
+        else
+        {
+            <!-- MENU LINKS -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#top" class="smoothScroll">Trang chủ</a></li>
+                    <li><a href="#about" class="smoothScroll">Trung tâm</a></li>
+                    <li><a href="#team" class="smoothScroll">Bác sĩ</a></li>
+                    <li><a href="#news" class="smoothScroll">Tin tức</a></li>
+                    <li class="appointment-btn"><a href="#appointment">Đặt lịch</a></li>
+                </ul>
+            </div>
+        }
+    </div>
+</section>

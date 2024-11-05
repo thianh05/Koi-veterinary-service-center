@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Koi Koi</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="/assets/css/tooplate-style.css">
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+    <!-- PRE LOADER -->
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
+    </section>
+    @Html.Partial("_header.cshtml")
+    @Html.Partial("_menu.cshtml")
+
+    @RenderBody()
+    <!-- FOOTER -->
+    <footer data-stellar-background-ratio="5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="footer-thumb">
+                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Thông tin trung tâm</h4>
+                        <p>Chuyên gia chăm sóc sức khỏe và nước của cá koi</p>
+
+                        <div class="contact-info">
+                            <p><i class="fa fa-phone"></i> 091234567</p>
+                            <p><i class="fa fa-envelope-o"></i> <a href="#">koikoi06@company.com</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="footer-thumb">
+                        <h4 class="wow fadeInUp" data-wow-delay="0.4s">Thông tin địa chỉ</h4>
+                        <div class="latest-stories">
+                            <div class="stories-image">
+                                <p>Địa chỉ 1: 123 Đường Bạch Đằng, Quận 1, TP. HCM</p>
+                                <p>Địa chỉ 2: 99 Võ Nguyễn Giáp, Quận 2, TP. HCM</p>
+                                <p>Địa chỉ 3: 152 Ngô Thị Nhậm, Quận 3, TP. HCM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="footer-thumb">
+                        <div class="opening-hours">
+                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Thời gian làm việc</h4>
+                            <p>Thứ 2 - Thứ 6 <span>07:00 - 22:00</span></p>
+                            <p>Thứ 7 <span>09:00 - 20:00</span></p>
+                            <p>Chủ nhật <span>Nghỉ</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 border-top">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="copyright-text">
+                            <p>
+                                Copyright &copy; 2017 Your Company
+
+                                | Design: <a href="http://www.tooplate.com" target="_parent">Tooplate</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="footer-link">
+                            <a href="#">Laboratory Tests</a>
+                            <a href="#">Departments</a>
+                            <a href="#">Insurance Policy</a>
+                            <a href="#">Careers</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 text-align-center">
+                        <div class="angle-up-btn">
+                            <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.sticky.js"></script>
+    <script src="/assets/js/jquery.stellar.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/smoothscroll.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

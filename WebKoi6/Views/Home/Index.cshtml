@@ -1,0 +1,307 @@
+﻿@using WebKoi6.DAL.Models
+@using WebKoi6.Web.Models
+@model HomeModel
+@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var lstDichvu = (List<Dichvuthuy>)ViewBag.ListDichVu;
+    var lstBacsi = (List<Bacsi>)ViewBag.ListBacsi;
+}
+<!-- HOME -->
+<section id="home" class="slider" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="owl-carousel owl-theme">
+                <div class="item item-first">
+                    <div class="caption">
+                        <div class="col-md-offset-1 col-md-10">
+                            <h3>Hãy làm hệ sinh thế trong bể cá trở lên tốt hơn</h3>
+                            <h1>Koi koi</h1>
+                            <a href="#team" class="section-btn btn btn-default smoothScroll">Gặp gỡ bác sĩ của chúng tôi</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item item-second">
+                    <div class="caption">
+                        <div class="col-md-offset-1 col-md-10">
+                            <h3>Bạn muốn xem thông tin trung tâm chăm sóc sức khỏe cá koi của chúng tôi</h3>
+                            <h1>Thông tin trung tâm</h1>
+                            <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Tìm hiểm thêm về chúng tôi</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item item-third">
+                    <div class="caption">
+                        <div class="col-md-offset-1 col-md-10">
+                            <h3>Bạn muốn xem thêm về tin tức của trung tâm</h3>
+                            <h1>Tin tức về hệ sinh thái, trung tâm mới nhất</h1>
+                            <a href="#news" class="section-btn btn btn-default btn-blue smoothScroll">Tìm hiểu thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@if (Model.ObjTrungTam != null)
+{
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h2 class="wow fadeInUp" data-wow-delay="0.6s">Chào mừng bạn đến với <b>KOIKOI</b></h2>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <p>Tên trung tâm: @Model.ObjTrungTam.TenTrungTam</p>
+                            <p>Địa chỉ: @Model.ObjTrungTam.DiaChi</p>
+                            <p>Hotline: @Model.ObjTrungTam.Hotline</p>
+                            <p>@Model.ObjTrungTam.MoTa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+@if (Model.ListBacSi != null && Model.ListBacSi.Count > 0)
+{
+    <!-- TEAM -->
+    <section id="team" data-stellar-background-ratio="1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">Bác sĩ của chúng tôi</h2>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                @foreach (var item in Model.ListBacSi)
+                {
+                    <div class="col-md-4 col-sm-6 mb-2">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="team-info">
+                                <h3>@item.TenBacSi</h3>
+                                <div class="team-contact-info">
+                                    <p><i class="fa fa-phone"></i>@item.Sodienthoai</p>
+                                    <p><i class="fa fa-envelope-o"></i> <a href="javascript:void(0)">@item.Email</a></p>
+                                    <p><i class="fa fa-line-chart"></i>Kinh nghiệm: @item.KinhNghiem năm</p>
+                                    <p><i class="fa fa-clock-o"></i>@item.Noidung</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+@if (Model.ListTintuc != null && Model.ListTintuc.Count > 0)
+{
+    <!-- NEWS -->
+    <section id="news" data-stellar-background-ratio="2.5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <h2>Tin tức mới nhất</h2>
+                    </div>
+                </div>
+                @foreach (var item in Model.ListTintuc)
+                {
+                    <div class="col-md-4 col-sm-6">
+                        <!-- NEWS THUMB -->
+                        <div class="news-thumb wow fadeInUp" data-wow-delay="0.4s">
+                            <a href="/Tintuc/Index?Id=@item.MaTinTuc">
+                                <img src="/Upload/Tintuc/@item.Hinhanh" style="width:360px; height:202px;" class="img-responsive" alt="">
+                            </a>
+                            <div class="news-info">
+                                <span>@item.NgayDang.Value.ToString("dd-MM-yyyy")</span>
+                                <h3><a href="/Tintuc/Detail?Id=@item.MaTinTuc">@item.TieuDe</a></h3>
+                                <div class="author">
+                                    <div class="author-info">
+                                        <h5>@item.TacGia</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+}
+<!-- MAKE AN APPOINTMENT -->
+<section id="appointment" data-stellar-background-ratio="3">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-sm-6">
+                <img src="/assets/images/appointment-image.jpg" class="img-responsive" alt="">
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+                <!-- CONTACT FORM HERE -->
+                <form id="appointment-form" role="form" method="post" action="/Home/Index">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                        <h2>Đặt lịch hẹn khám</h2>
+                    </div>
+                    @if (ViewBag.Error != null)
+                    {
+                        <span class="text-danger">@ViewBag.Error</span>
+                    }
+                    @if (ViewBag.Success != null)
+                    {
+                        <span class="text-success">@ViewBag.Success</span>
+                    }
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" name="TenKhachHang" placeholder="Họ và tên">
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="Email" placeholder="Email ">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="date">Ngày đặt lịch</label>
+                            <input type="date" name="NgayDatLich" value="" class="form-control">
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="select">Bác sĩ</label>
+                            <select class="form-control" name="BacsiId">
+                                <option value="0">-Chọn bác sĩ-</option>
+                                @if (lstBacsi != null && lstBacsi.Count > 0)
+                                {
+                                    foreach (var item in lstBacsi)
+                                    {
+                                        <option value="@item.Id">@item.TenBacSi</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="select">Dịch vụ</label>
+                            <select class="form-control" name="Madichvu">
+                                <option value="0">-Chọn dịch vụ-</option>
+                                @if (lstDichvu != null && lstDichvu.Count > 0)
+                                {
+                                    foreach (var item in lstDichvu)
+                                    {
+                                        <option value="@item.MaDichVu">@item.TenDichVu</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12">
+                            <label for="telephone">Số điên thoại</label>
+                            <input type="tel" class="form-control" id="phone" name="Sodienthoai" placeholder="Số điện thoại">
+                            <button type="submit" class="form-control" id="cf-submit" name="submit">Đặt lịch</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+@if (Model.ListFaq != null && Model.ListFaq.Count > 0)
+{
+    <!-- FAQ -->
+    <section data-stellar-background-ratio="5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                        <h2 class="wow fadeInUp" data-wow-delay="0.1s">Các câu hỏi thường gặp?</h2>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                @foreach (var item in Model.ListFaq)
+                {
+                    <div class="col-md-4 col-sm-6 mb-2">
+                        <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="team-info">
+                                <h3>@item.CauHoi</h3>
+                                <div class="team-contact-info">
+                                    <p>@item.CauTraLoi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+
+<section id="appointment" data-stellar-background-ratio="6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <img src="/assets/images/feedback.jpeg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <!-- CONTACT FORM HERE -->
+                <form id="appointment-form" role="form" method="post" action="/Home/Feedback">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                        <h2>Gửi thông tin đánh giá</h2>
+                    </div>
+                    @if (ViewBag.Error != null)
+                    {
+                        <span class="text-danger">@ViewBag.Error</span>
+                    }
+                    @if (ViewBag.Success != null)
+                    {
+                        <span class="text-success">@ViewBag.Success</span>
+                    }
+                    <div class="wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="col-md-6 col-sm-6">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" name="TenKhachHang" placeholder="Họ và tên" required>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="Email" placeholder="Email " required>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <label for="select">Đánh giá</label>
+                            <select class="form-control" name="DanhGia" required>
+                                <option value="">-Đánh giá-</option>
+                                <option value="Tốt">Tốt</option>
+                                <option value="Khá">Khá</option>
+                                <option value="Trung bình">Trung bình</option>
+                                <option value="Tệ">Tệ</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                            <label for="">Bình luận</label>
+                            <textarea class="form-control" rows="5" id="message" name="BinhLuan" placeholder="Bình luận" required></textarea>
+                            <button type="submit" class="form-control" id="cf-submit" name="submit">Gửi</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

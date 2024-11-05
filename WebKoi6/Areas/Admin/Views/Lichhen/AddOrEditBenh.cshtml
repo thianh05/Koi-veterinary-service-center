@@ -1,0 +1,77 @@
+﻿@using WebKoi6.DAL.Models;
+@model Chuandoanbenhcakoi;
+@{
+    ViewData["Title"] = "";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var title = string.Empty;
+    if (Model.Id > 0)
+    {
+        title = "Chỉnh sửa chuẩn đoán bệnh cá koi";
+    }
+    else
+    {
+        title = "Thêm mới chuẩn đoán bệnh cá koi";
+    }
+    int lichhenId = (int)ViewBag.LichhenId;
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">@title</h4>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">@title</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">@title</h4>
+            </div>
+            <div class="card-body">
+                <div class="live-preview">
+                    <p class="text-danger">@ViewBag.Error</p>
+                    <form action="/Admin/Lichhen/AddOrEditBenh" method="post">
+                        <input type="hidden" value="@Model.Id" name="Id" />
+                        <input type="hidden" value="@lichhenId" name="LichhenId" />
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Tên loại cá koi <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="TenLoaiCaKoi" value="@Model.TenLoaiCaKoi" required>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Chuẩn đoán<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="ChuanDoan" value="@Model.ChuanDoan" required>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Dấu hiệu</label>
+                                    <input type="text" class="form-control" name="DauHieu" value="@Model.DauHieu">
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Hình thức điều trị</label>
+                                    <input type="text" class="form-control" name="HinhThucDieuTri" value="@Model.HinhThucDieuTri">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end col-->
+</div>

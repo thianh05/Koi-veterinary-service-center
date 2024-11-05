@@ -1,0 +1,164 @@
+﻿@using WebKoi6.DAL.Models;
+@using WebKoi6.Web.Areas.Admin.Models
+@model LichHenModel;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int lichHenId = Model.ObjLichhen != null ? Model.ObjLichhen.Id : 0;
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">Chi tiết lịch hẹn</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Chi tiết lịch hẹn</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Lấy danh sách chuẩn đoán bệnh-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Chuẩn đoán bệnh cá koi</h4>
+                <div class="flex-shrink-0">
+                    <button type="button" id="btnCreate" onclick="window.location.href='/Admin/Lichhen/AddOrEditBenh?lhd=@lichHenId'" class="btn btn-warning btn-sm"><i class="bx bx-plus"></i> Thêm</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-centered align-middle">
+                    <thead>
+                        <tr>
+                            <th>Tên loai cá koi</th>
+                            <th>Dấu hiệu</th>
+                            <th>Chuẩn đoán</th>
+                            <th>Hình thức điều trị</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.ListChuandoanbenhcakoi.Count() > 0)
+                        {
+                            foreach (var item in Model.ListChuandoanbenhcakoi)
+                            {
+                                <tr>
+                                    <td>@item.TenLoaiCaKoi</td>
+                                    <td>@item.DauHieu</td>
+                                    <td>@item.ChuanDoan</td>
+                                    <td>@item.HinhThucDieuTri</td>                                 
+                                    <td>
+                                        <a class="btn btn-info btn-sm me-2" href="/Admin/Lichhen/AddOrEditBenh?Id=@item.Id&&lhd=@item.LichhenId">Sửa</a>
+                                        <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa thông tin này?')" href="/Admin/Lichhen/DeleteBenh?id=@item.Id">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td>Không có dữ liệu</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
+<hr />
+<!--Lấy danh sách chuẩn đoán tình trạng nước nước-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Chuẩn đoán tình trạng nước</h4>
+                <div class="flex-shrink-0">
+                    <button type="button" id="btnCreate" onclick="window.location.href='/Admin/Lichhen/AddOrEditNuoc?lhd=@lichHenId'" class="btn btn-warning btn-sm"><i class="bx bx-plus"></i> Thêm</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-centered align-middle">
+                    <thead>
+                        <tr>
+                            <th>Độ PH</th>
+                            <th>Độ nước</th>
+                            <th>Nhiệu độ</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.ListChuandoantinhtrannuoc.Count() > 0)
+                        {
+                            foreach (var item in Model.ListChuandoantinhtrannuoc)
+                            {
+                                <tr>
+                                    <td>@item.Ph</td>
+                                    <td>@item.DoCuongNuoc</td>
+                                    <td>@item.NhietDo</td>
+                                    <td>
+                                        <a class="btn btn-info btn-sm me-2" href="/Admin/Lichhen/AddOrEditNuoc?Id=@item.Id&&lhd=@lichHenId">Sửa</a>
+                                        <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa thông tin này?')" href="/Admin/Lichhen/DeleteNuoc?id=@item.Id">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td>Không có dữ liệu</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
+<hr />
+<!--Lấy danh sách đơn thuốc-->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">Đơn thuốc</h4>
+                <div class="flex-shrink-0">
+                    <button type="button" id="btnCreate" onclick="window.location.href='/Admin/Lichhen/AddOrEditThuoc?lhd=@lichHenId'" class="btn btn-warning btn-sm"><i class="bx bx-plus"></i> Thêm</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table table-centered align-middle">
+                    <thead>
+                        <tr>
+                            <th>Tên thuốc</th>
+                            <th>Liều lượng</th>
+                            <th>Hướng dẫn sử dụng</th>
+                            <th>Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.ListDonthuoc.Count() > 0)
+                        {
+                            foreach (var item in Model.ListDonthuoc)
+                            {
+                                <tr>
+                                    <td>@item.Tenthuoc</td>
+                                    <td>@item.Lieuluong</td>
+                                    <td>@item.hdsd</td>
+                                    <td>
+                                        <a class="btn btn-info btn-sm me-2" href="/Admin/Lichhen/AddOrEditThuoc?Id=@item.Id&&lhd=@lichHenId">Sửa</a>
+                                        <a class="btn btn-danger btn-sm" onclick="return confirm('Bạn có muốn xóa thông tin này?')" href="/Admin/Lichhen/Delete?id=@item.Id">Xóa</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr><td>Không có dữ liệu</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>

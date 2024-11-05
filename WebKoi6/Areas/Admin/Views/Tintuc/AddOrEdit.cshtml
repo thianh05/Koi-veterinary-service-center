@@ -1,0 +1,97 @@
+﻿@using WebKoi6.DAL.Models;
+@model Tintuc;
+@{
+    ViewData["Title"] = "";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var title = string.Empty;
+    if (Model.MaTinTuc > 0)
+    {
+        title = "Chỉnh sửa tin tức";
+    }
+    else
+    {
+        title = "Thêm mới tin tức";
+    }
+}
+@section Css {
+    <link href="~/admin/summernoteeditor/summernote.min.css" rel="stylesheet" />
+    <link href="~/admin/summernoteeditor/summernote-lite.min.css" rel="stylesheet" />
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0">@title</h4>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">@title</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">@title</h4>
+            </div>
+            <div class="card-body">
+                <div class="live-preview">
+                    <p class="text-danger">@ViewBag.Error</p>
+                    <form action="/Admin/Tintuc/AddOrEdit" method="post" enctype="multipart/form-data">
+                        <input type="hidden" value="@Model.MaTinTuc" name="MaTinTuc" />
+                        <div class="row gy-4">
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Tiêu đề<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="TieuDe" value="@Model.TieuDe" required>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Tác giả<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="TacGia" value="@Model.TacGia" required>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div>
+                                    <label class="form-label">Hình ảnh</label>
+                                    <input type="file" class="form-control" name="fileUpload">
+                                    @if (!string.IsNullOrEmpty(Model.Hinhanh))
+                                    {
+                                        <img src="/Upload/Tintuc/@Model.Hinhanh" height="50" width="50" />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xxl-12 col-md-12">
+                                <div>
+                                    <label class="form-label">Nội dung<span class="text-danger">*</span></label>
+                                    <textarea class="form-control" name="NoiDung" id="txtNoidung">@Model.NoiDung </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end col-->
+</div>
+@section Scripts {
+    <script src="~/admin/summernoteeditor/summernote.min.js"></script>
+    <script src="~/admin/summernoteeditor/summernote-lite.min.js"></script>
+    <script>
+        $('#txtNoidung').summernote({
+            height: 400,
+            minHeight: null,
+            maxHeight: null,
+            focus: true
+        });
+    </script>
+}
