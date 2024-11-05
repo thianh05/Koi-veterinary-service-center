@@ -17,9 +17,11 @@
 
 <div align="center">
  <h2><strong>TÀI NGUYÊN SỬ DỤNG CHO DỰ ÁN</strong></h2>
- </div>  
+ </div> 
+ 
 **Database**
 Database : MySQL (version 8.0)
+
 **Ngôn ngữ lập trình**
 + Front-end : HTML,CSS.
 + Back-end : C#
