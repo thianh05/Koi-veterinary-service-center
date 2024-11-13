@@ -451,17 +451,17 @@ http://www.tooplate.com/view/2098-health
     height: 650px;
   }
 
-  .slider .item-first {
-    background-image: url(../images/slider1.jpg);
-  }
+.slider .item-first {
+    background-image: url('../images/slider1.jpg');
+}
 
-  .slider .item-second {
-    background-image: url(../images/slider2.jpg);
-  }
+.slider .item-second {
+    background-image: url('../images/slider2.jpg');
+}
 
-  .slider .item-third {
-    background-image: url(../images/slider3.jpg);
-  }
+.slider .item-third {
+    background-image: url('../images/slider3.jpg');
+}
 
 
   /*---------------------------------------
